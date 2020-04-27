@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>指令配置列表</title>
+		<link href="../../favicon.ico" rel="shortcut icon">
+		<link rel="stylesheet" type="text/css" href="../../lib/easyui/easyui.css">
+		<link rel="stylesheet" type="text/css" href="../../lib/easyui/icon.css">
+		<link rel="stylesheet" type="text/css" href="../../lib/layui/css/layui.css">
+		<link rel="stylesheet" type="text/css" href="../../css/font.css">
+		<link rel="stylesheet" type="text/css" href="css/Configure.css">
+		<script type="text/javascript" src="../../lib/layui/layui.js"></script>
+		<script type="text/javascript" src="../../lib/easyui/jquery.min.js"></script>
+		<script type="text/javascript"  src="../../js/config.js"></script>
+		<script type="text/javascript" src="../../lib/easyui/jquery.easyui.min.js"></script>
+		<script type="text/javascript" src="js/Configure_List.js"></script>
+	</head>
+	<body class="easyui-layout">
+		<div id='Loading'>
+			<h1>
+				<image src='../../images/loading.gif' />
+				<font>Loading···</font>
+			</h1>
+		</div>
+		<table id="dg" class="easyui-datagrid" style="width:100%;height:100%" data-options="rownumbers:true,remoteSort:false,singleSelect:false,toolbar: '#tb',striped:true,pagination:true,pageSize:20,pageList: [20,50,100],onDblClickRow:editRow">
+		</table>
+		<div id="tb">
+			<table class="tab_pd">
+				<tr>
+					<td><input style="float: left;" id="order_search" name="order_search" class="layui-input" placeholder="指令名称" autocomplete="off" /></td>
+					<td><a  class="layui-btn layui-btn-sm" onclick="serach()"><i class="layui-icon">&#xe615;</i></a></td>
+					<td><a  class="layui-btn layui-btn-sm" onclick="add_Config()"><i class="layui-icon"></i> 新 增 </a></td>
+					<td><a  class="layui-btn layui-btn-sm" onclick="remove_Config()"><i class="layui-icon"></i> 删 除 </a></td>
+					<td><a  class="layui-btn layui-btn-sm" onclick="rest_Config()"><i class="layui-icon">&#xe666;</i> 刷 新 </a></td>
+				</tr>
+			</table>
+			<div class="layui-btn-group dy">
+				<button type="button" class="layui-btn layui-btn-primary layui-btn-sm"><i class="layui-icon">&#xe60b;</i></button>
+			</div>
+		</div>
+	</body>
+</html>

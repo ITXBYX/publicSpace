@@ -1,0 +1,39 @@
+{
+  "columns":[
+	  {
+	  		"title":"操作",
+	  	  "field":"ck",
+				"checkbox":"true"
+	  },
+    {
+      "field":"id",
+      "title":"角色ID",
+      "halign":"center",
+      "width":"15%",
+      "hidden":"true",
+      "align":"center",
+      "editor": "text"
+    },
+    {
+      "field":"name",
+      "title":"角色名称",
+      "halign":"center",
+      "width":"17%",
+      "align":"center"
+    },
+    {
+      "field":"create_time",
+      "title":"创建日期",
+      "halign":"center",
+      "width":"21%",
+      "align":"center"
+    },
+    {
+      "field":"description",
+      "title":"描述",
+      "halign":"center",
+      "width":"15%",
+      "align":"center"
+    }
+  ]
+}

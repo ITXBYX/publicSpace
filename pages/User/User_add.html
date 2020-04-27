@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>新增指令</title>
+		<link href="../../favicon.ico" rel="shortcut icon">
+		<link rel="stylesheet" type="text/css" href="../../lib/easyui/easyui.css">
+		<link rel="stylesheet" type="text/css" href="../../lib/easyui/icon.css">
+		<link rel="stylesheet" type="text/css" href="../../lib/layui/css/layui.css">
+		<link rel="stylesheet" type="text/css" href="../../css/font.css">
+		<link rel="stylesheet" type="text/css" href="css/Configure.css">
+		<script type="text/javascript" src="../../lib/layui/layui.js"></script>
+		<script type="text/javascript" src="../../lib/easyui/jquery.min.js"></script>
+		<script type="text/javascript" src="../../lib/easyui/jquery.easyui.min.js"></script>
+		<script type="text/javascript"  src="../../js/config.js"></script>
+		<script type="text/javascript" src="js/User_add.js"></script>
+	</head>
+	<body class="easyui-layout">
+		<center>
+			<div class="layui-form">
+				<form id="main_info" name="main_info">
+					<table class="tab_pd">
+						
+						
+						
+						<tr>
+							<td>邮箱：</td>
+							<td><input  name="email" id="email" placeholder="" class="layui-input" autocomplete="off" lay-verify="email"></td>
+							<td>&nbsp;&nbsp;&nbsp;&nbsp;手机号码：</td>
+							<td><input type="number" name="telephone" id="telephone" placeholder="" class="layui-input" autocomplete="off" lay-verify="required|phone"></td>
+						</tr>
+						<tr>
+							<td>密码：</td>
+							<td><input type="text" name="password" id="password" placeholder="" class="layui-input" autocomplete="off" lay-verify="required"></td>
+							<td>&nbsp;&nbsp;&nbsp;&nbsp;出生日期：</td>
+							<td><input name="birthday" id="birthday" placeholder="yyyy-MM-dd" class="layui-input" autocomplete="off"></td>
+						</tr>						
+						<tr>
+							<td>性别：</td>
+							<td><select  name="sex" id="sex"><option value="">请选择</option><option value="1">男</option><option value="0">女</option></select></td>
+						</tr>
+	
+					</table>
+				</form>
+				<div class="footer">
+					<table class="tab_pd">
+						<tr>
+							<td><a class="layui-btn layui-btn-sm" lay-submit="" onclick="Save()"> 保 存 </a></td>
+							<td><a class="layui-btn layui-btn-sm" onclick="Return()"> 返 回 </a></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</center>
+	</body>
+</html>

@@ -1,0 +1,47 @@
+{
+  "columns":[
+	  {
+	  		"title":"操作",
+	  	  "field":"ck",
+				"checkbox":"true"
+	  },
+    {
+      "field":"id",
+      "title":"菜单ID",
+      "halign":"center",
+      "width":"15%",
+      "hidden":"true",
+      "align":"center",
+      "editor": "text"
+    },
+    {
+      "field":"name",
+      "title":"菜单名称",
+      "halign":"center",
+      "width":"17%",
+      "align":"center"
+    },
+    {
+      "field":"href",
+      "title":"链接",
+      "halign":"center",
+      "width":"11%",
+      "align":"center"
+    },
+    {
+      "field":"create_time",
+      "title":"创建日期",
+      "halign":"center",
+      "width":"21%",
+      "align":"center"
+    },
+    {
+      "field":"parent_id",
+      "title":"上级ID",
+      "halign":"center",
+      "width":"10%",
+      "formatter":"",
+      "align":"center"
+    }
+  ]
+}

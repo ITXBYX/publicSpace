@@ -1,0 +1,100 @@
+<!doctype html>
+<html class="x-admin-sm">
+	<head>
+		<meta charset="UTF-8">
+		<title>基因组数据处理中心登录</title>
+		<link href="favicon.ico" rel="shortcut icon">
+		<link rel="stylesheet" href="./css/font.css">
+		<link rel="stylesheet" href="./css/login.css">
+		<link rel="stylesheet" href="./css/xadmin.css">
+		<link rel="stylesheet" type="text/css" href="lib/easyui/easyui.css">
+		<link rel="stylesheet" type="text/css" href="lib/easyui/icon.css">
+		<link rel="stylesheet" type="text/css" href="lib/layui/css/layui.css">
+		<link rel="stylesheet" type="text/css" href="css/font.css">
+		<script type="text/javascript" src="lib/layui/layui.js"></script>
+		<script type="text/javascript" src="lib/easyui/jquery.min.js"></script>
+		<script type="text/javascript" src="lib/easyui/jquery.easyui.min.js"></script>
+		<script type="text/javascript"  src="js/config.js"></script>	
+
+	</head>
+	
+	<body class="login-bg">
+		<div class="login layui-anim layui-anim-up">
+			<div class="layui-row">
+				<div class="layui-col-xs5 grid-left">
+					<center>
+						<div class="logo">
+							<img src="images/IPIG-logo.png" />
+						</div><br />
+						<div class="fonta"><a>欢迎来到艾佩克</a></div><br /><br />
+						<div class="fonta"><a>WELCOME TO IPIG</a></div><br />
+						<div class="lian">
+							<img src="images/lian.png" />
+						</div>
+					</center>
+				</div>
+				<div class="layui-col-xs7 grid-right">
+					<center>
+						<div class="fontb"><a>基因组数据处理中心</a></div><br />
+						<div class="fontc"><a>请使用您本人的账号密码登录</a></div><br />
+						<div class="form">
+							<form method="post" class="layui-form">
+								<input id="username" name="username" placeholder="用户名" type="text" lay-verify="required" class="layui-input">
+								<hr class="hr15">
+								<input id="password" name="password" lay-verify="required" placeholder="密码" type="password" class="layui-input">
+								<hr class="hr15">
+								<a href="#" class="fontd">忘记密码？</a>
+								<hr class="hr15">
+								<button onclick="ab()" type="button" class="layui-btn layui-btn-radius" style="height: 40px;">登
+									录 系 统</button>
+								<hr class="hr20">
+							</form>
+						</div>
+					</center>
+				</div>
+			</div>
+		</div>
+	</body>
+
+	<script>
+		layui.use(['element', 'layer', 'form', 'layedit'], function() {
+			var element = layui.element,
+					layer = layui.layer,
+					form = layui.form,
+					layedit = layui.layedit;
+		});
+		function ab(){
+			$.ajaxSettings.async=false;
+			var url1=routePath+"/getToGrid";
+			var Tab_name="t_user";
+			var title="";
+			var valuse;
+			var UserID=$("#username").val();
+			var UserPwd=$("#password").val();
+			sessionStorage.setItem('userID', UserID);
+			sessionStorage.setItem('userPWD', UserPwd);
+			sessionStorage.setItem('status', "0");
+			var url2=routePath+"/logIn";
+			var state=0;
+			layer = layui.layer;
+			$.get(url2,{'Id':UserID,'psw':UserPwd},
+					function(data1){
+						valuse=data1["content"];
+						if(valuse.status==1)
+						{
+							sessionStorage.setItem('owner', valuse.filePath);
+							sessionStorage.setItem('role', valuse.role);
+							console.log(sessionStorage.getItem('owner'));
+							console.log(sessionStorage.getItem('role'));
+							sessionStorage.setItem('status', "1");
+							window.location.href="index.html";
+						}
+					},
+					"json");
+			if(state==0)
+			{
+				layer.msg('登录失败,请重新输入账号密码');
+			}
+		}
+	</script>
+</html>

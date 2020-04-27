@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>编辑流程</title>
+		<link href="../../favicon.ico" rel="shortcut icon">
+		<link rel="stylesheet" type="text/css" href="../../lib/easyui/easyui.css">
+		<link rel="stylesheet" type="text/css" href="../../lib/easyui/icon.css">
+		<link rel="stylesheet" type="text/css" href="../../lib/layui/css/layui.css">
+		<link rel="stylesheet" type="text/css" href="../../css/font.css">
+		<link rel="stylesheet" type="text/css" href="css/Process.css">
+		<script type="text/javascript" src="../../lib/layui/layui.js"></script>
+		<script type="text/javascript" src="../../lib/easyui/jquery.min.js"></script>
+		<script type="text/javascript" src="../../lib/easyui/jquery.easyui.min.js"></script>
+		
+		<script type="text/javascript"  src="../../js/config.js"></script>
+		<script type="text/javascript" src="js/Process_edit.js"></script>
+	</head>
+	<body class="easyui-layout">
+		<div class="max_height layui-form">
+			<!-- 主表：流程主要信息 -->
+			<form id="Main_form" action="">
+				<table class="tab_pd">
+					<tr>
+						<td>流程名称：</td>
+						<td>
+							<input type="text" name="f_name" id="f_name" placeholder="输入流程名称" class="layui-input" autocomplete="off">
+						</td>
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;流程描述：</td>
+						<td rowspan="2">
+							<textarea name="f_describe" id="f_describe" placeholder="请输入流程描述" class="layui-textarea"></textarea>
+						</td>
+					</tr>
+					<tr>
+						<td>备注：</td>
+						<td>
+							<input type="text" id="f_remark" name="f_remark" autocomplete="off" placeholder="请输入备注" class="layui-input">
+						</td>
+					</tr>
+					<tr>
+						<td>启动状态：</td>
+						<td>
+							<div class="layui-input-block" style="margin-left: 0px;">
+								<input type="radio" name="f_start1" id="f_start1" value="启用" title="启用" >
+								<input type="radio" name="f_start2" id="f_start2" value="禁用" title="禁用">
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<!-- 不需要显示的隐藏部分字段 -->
+							<input type="text" name="f_id" class="layui-input none"><!-- 流程ID -->
+							<input type="text" name="ih_create_user" class="layui-input none"><!-- 创建者 -->
+							<input type="text" name="ih_create_date" class="layui-input none"><!-- 创建时间 -->
+							<input type="text" name="ih_update_user" class="layui-input none"><!-- 修改者 -->
+							<input type="text" name="ih_update_date" class="layui-input none"><!-- 修改时间 -->
+							<input type="text" name="f_preinstall" class="layui-input none"><!-- 预设状态 -->
+						</td>
+					</tr>
+				</table>
+			</form>
+			<!-- 从表：步骤指令 -->
+			<form id="" class="layui-form" action="">
+				<table class="tab_pd" id="add_bz">
+					<tr></tr>
+					<tr id="tr">
+						<!--<td><i onclick="add_bz()" class="iconfont icon_f">&#xe6b9;</i> </td>-->
+					</tr>
+				</table>
+			</form>
+
+			<center>
+				<div class="footer">
+					<table class="tab_pd">
+						<tr>
+							<td><a class="layui-btn layui-btn-sm" onclick="Save()"> 保 存 </a></td>
+							<td><a class="layui-btn layui-btn-sm layui-btn-normal" onclick="Return()"> 返 回 </a></td>
+						</tr>
+					</table>
+				</div>
+			</center>
+		</div>
+
+
+
+		</div>
+	</body>
+</html>

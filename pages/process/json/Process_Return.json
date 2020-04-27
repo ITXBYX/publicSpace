@@ -1,0 +1,29 @@
+{
+  "columns":[
+
+    {
+      "field":"ir_name",
+      "title":"条件名称",
+      "halign":"center",
+      "width":"100px",
+      "align":"center",
+      "editor": "text"
+    },
+    {
+      "field":"ir_remark",
+      "title":"条件",
+      "halign":"center",
+      "width":"80px",
+      "align":"center",
+      "editor": "{type:'combobox'}"
+    },
+    {
+      "field":"ir_describe",
+      "title":"参数",
+      "halign":"center",
+      "width":"80px",
+      "align":"center",
+      "editor": "text"
+    }
+  ]
+}

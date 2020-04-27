@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>新增流程</title>
+	<link href="../../favicon.ico" rel="shortcut icon">
+	<link rel="stylesheet" type="text/css" href="../../lib/easyui/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../../lib/easyui/icon.css">
+	<link rel="stylesheet" type="text/css" href="../../lib/layui/css/layui.css">
+	<link rel="stylesheet" type="text/css" href="../../css/font.css">
+	<link rel="stylesheet" type="text/css" href="css/Process.css">
+	<script type="text/javascript"  src="../../js/config.js"></script>
+	<script type="text/javascript" src="../../lib/layui/layui.js"></script>
+	<script type="text/javascript" src="../../lib/easyui/jquery.min.js"></script>
+	<script type="text/javascript" src="../../lib/easyui/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="js/Process_add.js"></script>
+</head>
+<body class="easyui-layout">
+<div class="max_height layui-form">
+	<!-- 主表：流程主要信息 -->
+	<form id="main_info" action="">
+		<table class="tab_pd">
+			<tr id="frm01"></tr>
+			<tr id="frm02"></tr>
+			<tr id="frm03"></tr>
+			<tr id="frm04"></tr>
+		</table>
+	</form>
+	<!-- 从表：步骤指令 -->
+	<form id="select1" class="layui-form" action="">
+		<table class="tab_pd" id="add_bz">
+			<tr></tr>
+			<tr id="tr">
+			</tr>
+		</table>
+	</form>
+	<form id="Return" class="layui-form" action="">
+		<table class="tab_pd">
+			<tr id="re1"></tr>
+		</table>
+	</form>
+	<center>
+		<div class="footer">
+			<table class="tab_pd">
+				<tr>
+					<td><a class="layui-btn layui-btn-sm" onclick="Save()"> 保 存 </a></td>
+					<td><a class="layui-btn layui-btn-sm" onclick="Return()"> 返 回 </a></td>
+				</tr>
+			</table>
+		</div>
+	</center>
+</div>
+</body>
+</html>

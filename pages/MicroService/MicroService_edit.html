@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+<meta http-equiv="expires" content="0">
+		<title>新增指令</title>
+		<link href="../../favicon.ico" rel="shortcut icon">
+		<link rel="stylesheet" type="text/css" href="../../lib/easyui/easyui.css">
+		<link rel="stylesheet" type="text/css" href="../../lib/easyui/icon.css">
+		<link rel="stylesheet" type="text/css" href="../../lib/layui/css/layui.css">
+		<link rel="stylesheet" type="text/css" href="../../css/font.css">
+		<link rel="stylesheet" type="text/css" href="css/Configure.css">
+		<script type="text/javascript" src="../../lib/layui/layui.js"></script>
+		<script type="text/javascript" src="../../lib/easyui/jquery.min.js"></script>
+		<script type="text/javascript"  src="../../js/config.js"></script>
+		<script type="text/javascript" src="../../lib/easyui/jquery.easyui.min.js"></script>
+		<script type="text/javascript" src="js/MicroService_edit.js"></script>
+	</head>
+	<body class="easyui-layout">
+		<center>
+			<div class="layui-form">
+				<form id="main_info" name="main_info" action="">
+					<table class="tab_pd">
+						<tr>
+							<td>服务ID：</td><td><input type="text" name="i_id" id="i_id"  class="layui-input"></td>
+							<td>&nbsp;&nbsp;&nbsp;&nbsp;服务名称：</td><td><input type="text" name="i_name" id="i_name"  class="layui-input"></td>
+						</tr>
+						<tr>
+							<td>服务端口：</td><td><input name="i_code" id="i_code" class="layui-input"></input></td>
+							<td>&nbsp;&nbsp;&nbsp;&nbsp;创建时间：</td><td><input type="text" name="i_create_date" id="i_create_date" class="layui-input"></td>
+						</tr>
+						<tr style="display: none;">
+							<td>&nbsp;&nbsp;&nbsp;&nbsp;修改者：</td><td><input type="text" name="i_update_user" id="i_update_user" class="layui-input"></td>
+						</tr>
+						<tr>
+							<td>服务类型：</td><td><select  name="i_type" id="i_type"><option value="">请选择</option><option value="KFTool">KFTool</option><option value="Linux">Linux</option><option value="Java">Java</option><option value="Python">Python</option><option value="C++">C++</option><option value="MySQL">MySQL</option></select></td>
+							<td>&nbsp;&nbsp;&nbsp;&nbsp;创建者：</td><td><input type="text" name="i_create_user" id="i_create_user" class="layui-input"></td>
+						</tr>
+						<tr>
+							<td>服务路由：</td>
+							<td><input name="i_path" id="i_path" placeholder="" class="layui-input" autocomplete="off"></td>							
+						</tr>
+					</table>
+				</form>
+					<div class="footer">
+						<table class="tab_pd">
+							<tr>
+								<td><a class="layui-btn layui-btn-sm" lay-submit="" onclick="Save()"> 保 存 </a></td>
+								<td><a class="layui-btn layui-btn-sm" onclick="Return()"> 返 回 </a></td>
+							</tr>
+						</table>
+					</div>
+				</form>
+			</div>
+		</center>
+		</div>
+	</body>
+</html>

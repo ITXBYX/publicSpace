@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>任务列表-顺序</title>
+		<link href="../../favicon.ico" rel="shortcut icon">
+		<link rel="stylesheet" type="text/css" href="../../lib/easyui/easyui.css">
+		<link rel="stylesheet" type="text/css" href="../../lib/easyui/icon.css">
+		<link rel="stylesheet" type="text/css" href="../../lib/layui/css/layui.css">
+		<link rel="stylesheet" type="text/css" href="css/Task.css">
+		<script type="text/javascript" src="../../lib/layui/layui.js"></script>
+		<script type="text/javascript" src="../../lib/easyui/jquery.min.js"></script>
+		<script type="text/javascript" src="../../lib/easyui/jquery.easyui.min.js"></script>
+		<script type="text/javascript"  src="../../js/config.js"></script>
+		<script type="text/javascript" src="js/Task_List.js"></script>
+	</head>
+	<body class="easyui-layout">
+		<div id='Loading'>
+			<h1>
+				<image src='../../images/loading.gif' />
+				<font>Loading···</font>
+			</h1>
+		</div>
+		<table id="dg" class="easyui-datagrid" style="width:100%;height:100%" data-options="rownumbers:true,singleSelect:false,toolbar: '#tb',striped:true,pagination:true,pageSize:20,pageList: [20,50,100]">
+		</table>
+		<div id="tb">
+			<table class="tab_pd">
+				<tr>
+					<td><input id="order_search" name="order_search" class="layui-input" placeholder="任务名称" autocomplete="off" /></td>
+					<td><a class="layui-btn layui-btn-sm" onclick="serach()"><i class="layui-icon">&#xe615;</i></a></td>
+					<td><a class="layui-btn layui-btn-sm" onclick="remove()"><i class="layui-icon"></i>删除任务</a></td>
+					<td><a class="layui-btn layui-btn-sm" onclick="rest()"><i class="layui-icon">&#xe666;</i> 刷 新 </a></td>
+				</tr>
+			</table>
+			<div class="layui-btn-group dy">
+				<button type="button" class="layui-btn layui-btn-primary layui-btn-sm"><i class="layui-icon">&#xe60b;</i></button>
+			</div>
+		</div>
+		<div id="seeTask">
+			<table id="dg2" name="dg2" class="easyui-datagrid" style="width:100%;height:auto;text-align: center;" data-options="rownumbers:true,singleSelect:true,striped:true">			
+			</table>
+			<br /><br />
+			<center>
+				<table id="add_bz" style="text-align: center;">
+					<tr id="intr2"></tr>
+					<tr id="intr3">
+						<td><div class="layui-btn layui-btn-primary"  style="width: 40px;height: 15px;position: absolute;left: 30px;top: 375px; font-size:5px;text-align: center;" ></div></td>
+						<td><div class="layui-btn" style="width: 40px;height: 15px;position: absolute;left: 120px;top: 375px; font-size:5px;text-align: center;" ></div></td>
+						<td><div class="layui-btn layui-btn layui-btn-danger" style="width: 40px;height: 15px;position: absolute;left: 210px;top: 375px; font-size:5px;text-align: center;" ></div></td>
+					</tr>
+					<tr>
+						<td><div style="width: 80px;height: 25px;position: absolute;left: 10px;top: 400px; font-size:5px;text-align: center;" >未执行</div></td>
+						<td><div  style="width: 80px;height: 25px;position: absolute;left: 100px;top: 400px; font-size:5px;text-align: center;" >成功</div></td>
+						<td><div  style="width: 80px;height: 25px;position: absolute;left: 190px;top: 400px; font-size:5px;text-align: center;" >失败</div></td>
+					</tr>
+				</table>
+			</center>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,243 @@
+﻿<!doctype html>
+<html class="x-admin-sm">
+	<head>
+		<meta charset="UTF-8">
+		<title>IOT分布式信息系统开发模型</title>
+		<meta name="renderer" content="webkit|ie-comp|ie-stand">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8" />
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+		<link href="favicon.ico" rel="shortcut icon">
+		<link rel="stylesheet" href="./css/font.css">
+		<link rel="stylesheet" href="./css/xadmin.css">
+		<script src="./lib/layui/layui.js" charset="utf-8"></script>
+		<script type="text/javascript" src="./js/xadmin.js"></script>
+		<link rel="stylesheet" type="text/css" href="lib/easyui/easyui.css">
+		<link rel="stylesheet" type="text/css" href="lib/easyui/icon.css">
+		<link rel="stylesheet" type="text/css" href="lib/layui/css/layui.css">
+		<link rel="stylesheet" type="text/css" href="css/font.css">
+		
+		<script type="text/javascript" src="lib/easyui/jquery.min.js"></script>
+		<script type="text/javascript" src="lib/easyui/jquery.easyui.min.js"></script>
+		<script type="text/javascript"  src="js/config.js"></script>	
+		<script>
+			var is_remember = false;
+		</script>
+		<style>
+			.out{background-color: grey;}
+		</style>
+	</head>
+	<!-- class="index" -->
+	<body  class="login-bg">
+		<div class="container">
+			<div class="logo">
+				<a href="./index.html">分布式数据管控</a></div>
+			<div class="left_open">
+				<a><i title="展开左侧栏" class="iconfont">&#xe699;</i></a>
+			</div>
+			<ul class="layui-nav right" lay-filter="">
+				<li class="layui-nav-item">
+					<a id="UserID"></a>
+					<dl class="layui-nav-child">
+						<dd>
+							<a onclick="xadmin.open('个人信息','http://www.baidu.com')">个人信息</a></dd>
+						<dd>
+							<a onclick="xadmin.open('切换帐号','http://www.baidu.com')">切换帐号</a></dd>
+						<dd>
+							<a href="./login.html">退出</a></dd>
+					</dl>
+				</li>
+			</ul>
+		</div>
+
+	<div class="left-nav">
+			<div id="side-nav">
+			
+				<ul id="nav">
+
+					<li>
+						<a href="javascript:;">
+							<i class="iconfont left-nav-li" lay-tips="系统用户管理">&#xe6b8;</i>
+							<cite>权限控制中心</cite>
+							<i class="iconfont nav_right">&#xe697;</i></a>
+						<ul class="sub-menu">
+							<li>
+								<a onclick="xadmin.add_tab('用户管理','pages/User/User_List.html')">
+									<i class="iconfont">&#xe6a2;</i>
+									<cite>用户管理</cite></a>
+							</li>
+							<li>
+								<a onclick="xadmin.add_tab('角色管理','pages/Role/Role_List.html')">
+									<i class="iconfont">&#xe6a2;</i>
+									<cite>角色管理</cite></a>
+							</li>
+							<li>
+								<a onclick="xadmin.add_tab('权限管理','pages/Right/Right_List.html')">
+									<i class="iconfont">&#xe6a2;</i>
+									<cite>权限管理</cite></a>
+							</li>
+						</ul>
+					</li>
+
+
+					<li>
+						<a href="javascript:;">
+							<i class="iconfont left-nav-li" lay-tips="业务模块">&#xe6b4;</i>
+							<cite>业务模块</cite>
+							<i class="iconfont nav_right">&#xe697;</i></a>
+						<ul class="sub-menu">
+							<li>
+								<a onclick="xadmin.add_tab('任务列表','pages/Task/Task_List.html')">
+									<i class="iconfont">&#xe6a2;</i>
+									<cite>任务列表</cite></a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<i class="iconfont left-nav-li" lay-tips="配置中心">&#xe6ae;</i>
+							<cite>配置中心</cite>
+							<i class="iconfont nav_right">&#xe697;</i></a>
+						<ul class="sub-menu">
+							<li>
+								<a onclick="xadmin.add_tab('指令配置','pages/Configure/Configure_List.html')">
+									<i class="iconfont">&#xe6a2;</i>
+									<cite>指令配置</cite></a>
+							</li>
+							<li>
+								<a onclick="xadmin.add_tab('流程配置','pages/process/Process_List.html')">
+									<i class="iconfont">&#xe6a2;</i>
+									<cite>流程配置</cite></a>
+							</li>
+							<li>
+								<a onclick="xadmin.add_tab('微服务配置','pages/MicroService/MicroService_List.html')">
+									<i class="iconfont">&#xe6a2;</i>
+									<cite>微服务配置</cite></a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	
+		<!-- <div class="x-slide_left"></div> -->
+		<!-- 左侧菜单结束 -->
+		<!-- 右侧主体开始 -->
+		<div class="page-content">
+			<div class="layui-tab tab" lay-filter="xbs_tab" lay-allowclose="false">
+				<ul class="layui-tab-title">
+					<li class="home">
+						<i class="layui-icon">&#xe68e;</i>我的桌面</li>
+				</ul>
+				<div class="layui-unselect layui-form-select layui-form-selected" id="tab_right">
+					<dl>
+						<dd data-type="this">关闭当前</dd>
+						<dd data-type="other">关闭其它</dd>
+						<dd data-type="all">关闭全部</dd>
+					</dl>
+				</div>
+				<div class="layui-tab-content">
+					<div class="layui-tab-item layui-show">
+						<iframe src='./welcome.html' frameborder="0" scrolling="yes" class="x-iframe"></iframe>
+					</div>
+				</div>
+				<div id="tab_show"></div>
+			</div>
+		</div>
+		<div class="page-content-bg"></div>
+		<style id="theme_style"></style>
+		<!-- 右侧主体结束 -->
+		<!-- 中部结束 -->
+		<script>
+			// $(document).ready(function(){
+			// 	$.ajaxSettings.async=false;
+			// 	// frm_disp();
+			// 	var status1 = sessionStorage.getItem('status');
+			// 	var owner = sessionStorage.getItem('owner');
+			// 	if(status1==null)
+			// 	{
+			// 		window.location.href="login.html";
+			// 	}
+			// 	lock();
+			// });
+			function lock() {
+				$.ajaxSettings.async=false;
+				var role = sessionStorage.getItem('role');
+				console.log(role);
+				var Tab_name="t_authority_role_power";
+				var Titles = "where r_name='"+role +"'";
+				var values;
+				var url5=routePath+"/getToGrid";
+				$.get(url5,{'tabName':Tab_name,'titles':Titles},
+						function(data1){
+							values=data1["content"][0];
+						},
+						"json");
+				if(values["r_name"]=='User')
+				{
+					var sign4 = document.getElementById("li04");
+					changBkColor(sign4);
+					$('#a4').click(function (event) {
+						return false;
+					});
+
+					var obj4 = document.getElementById('a4');
+					obj4.style.backgroundColor = "gray";
+					var sign3 = document.getElementById("li03");
+					changBkColor(sign3);
+					$('#a3').click(function (event) {
+						return false;
+					});
+					var obj3 = document.getElementById('a3');
+					obj3.style.backgroundColor = "gray";
+                    sign3.remove();
+                    sign4.remove();
+
+				}
+				else if(values["r_name"]=='SystemUser1')
+				{
+					var sign1=document.getElementById("li01");
+					changBkColor(1);
+					$('#a1').click(function(event){
+						return false;
+					});
+					var obj1=document.getElementById('a1');
+					obj1.style.backgroundColor="gray";
+
+					var sign2=document.getElementById("li02");
+					changBkColor(sign2);
+					$('#a2').click(function(event){
+						return false;
+					});
+					var obj2=document.getElementById('a2');
+					obj2.style.backgroundColor="gray";
+				}
+				}
+				function changBkColor(obj) {
+					obj.onmouseover=function () {
+						this.className="out";
+					}
+				}
+				function frm_disp(){
+					var owner = sessionStorage.getItem('owner');
+
+					var Vdata1='<a id="a1" href="javascript:;"><i class="iconfont left-nav-li" lay-tips="业务模块">&#xe6b4;</i><cite>业务模块</cite><i class="iconfont nav_right">&#xe697;</i></a><ul class="sub-menu"><a onclick="xadmin.add_tab(\'任务列表\',\'pages/Task/Task_List.html\')"><i class="iconfont">&#xe6a2;</i><cite>任务列表</cite></a></li></ul>';
+					var Vdata2='<a id="a2" href="javascript:;"><i class="iconfont left-nav-li" lay-tips="配置中心">&#xe6ae;</i> <cite>配置中心</cite> <i class="iconfont nav_right">&#xe697;</i></a> <ul class="sub-menu"> <li> <a onclick="xadmin.add_tab(\'指令配置\',\'pages/Configure/Configure_List.html\')"><i class="iconfont">&#xe6a2;</i> <cite>指令配置</cite></a> </li> <li><a onclick="xadmin.add_tab(\'流程配置\',\'pages/process/Process_List.html\')"> <i class="iconfont">&#xe6a2;</i> <cite>流程配置</cite></a> </li> <li><a onclick="xadmin.add_tab(\'微服务配置\',\'pages/MicroService/Configure_List.html\')"> <i class="iconfont">&#xe6a2;</i> <cite>微服务配置</cite></a> </li></ul>';
+					var Vdata3='<a id="a3" href="javascript:;"> <i class="iconfont left-nav-li" lay-tips="权限控制中心">&#xe6ce;</i> <cite>权限控制中心</cite> <i class="iconfont nav_right">&#xe697;</i></a> <ul class="sub-menu"> <li> <a href="javascript:;"> <i class="iconfont">&#xe6b8;</i> <cite>用户管理</cite> <i class="iconfont nav_right">&#xe697;</i></a> <ul class="sub-menu"> <li> <a onclick="xadmin.add_tab(\'系统用户\',\'pages/User/System_List.html\')"> <i class="iconfont">&#xe6a2;</i> <cite>系统用户</cite></a> </li> <li> <a onclick="xadmin.add_tab(\'商户用户\',\'pages/User/Business_List.html\')"> <i class="iconfont">&#xe6a2;</i><cite>商户用户</cite></a></li></ul> </li><li><a href="javascript:;"> <i class="iconfont">&#xe699;</i><cite> 角色管理  </cite><i class="iconfont nav_right">&#xe697;</i></a><ul class="sub-menu"> <li> <a onclick="xadmin.add_tab(\'角色列表\',\'pages/User/Role_list.html\')"> <i class="iconfont">&#xe6a2;</i> <cite>角色列表</cite></a> </li> </ul> </li> <li><a href="javascript:;"> <i class="iconfont">&#xe699;</i><cite> 权限管理  </cite><i class="iconfont nav_right">&#xe697;</i></a><ul class="sub-menu"> <li> <a onclick="xadmin.add_tab(\'权限列表\',\'pages/User/Role_list.html\')"> <i class="iconfont">&#xe6a2;</i> <cite>权限列表</cite></a> </li> </ul> </li> </ul>';
+					var Vdata4='<a id="a4" href="javascript:;"> <i class="iconfont left-nav-li" lay-tips="用户中心">&#xe6b8;</i> <cite>用户中心</cite> <i class="iconfont nav_right">&#xe697;</i></a> <ul class="sub-menu"> <li> <a href="login.html" target="_blank"> <i class="iconfont">&#xe6a2;</i> <cite>登录页面</cite></a> </li> <li> <a onclick="xadmin.add_tab(\'错误页面\',\'error.html\')"> <i class="iconfont">&#xe6a2;</i> <cite>错误页面</cite></a> </li> </ul>';
+					$('#li01').html(Vdata1);
+					$('#li02').html(Vdata2);
+					$('#li03').html(Vdata3);
+					$('#li04').html(Vdata4);
+				}
+
+				function hide() {
+
+
+				}
+
+			var userID = sessionStorage.getItem('userID');
+			document.getElementById("UserID").innerHTML = userID;
+		</script>
+	</body>
+</html>

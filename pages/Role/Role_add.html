@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>新增指令</title>
+		<link href="../../favicon.ico" rel="shortcut icon">
+		<link rel="stylesheet" type="text/css" href="../../lib/easyui/easyui.css">
+		<link rel="stylesheet" type="text/css" href="../../lib/easyui/icon.css">
+		<link rel="stylesheet" type="text/css" href="../../lib/layui/css/layui.css">
+		<link rel="stylesheet" type="text/css" href="../../css/font.css">
+		<link rel="stylesheet" type="text/css" href="css/Configure.css">
+		<script type="text/javascript" src="../../lib/layui/layui.js"></script>
+		<script type="text/javascript" src="../../lib/easyui/jquery.min.js"></script>
+		<script type="text/javascript" src="../../lib/easyui/jquery.easyui.min.js"></script>
+		<script type="text/javascript"  src="../../js/config.js"></script>
+		<script type="text/javascript" src="js/Role_add.js"></script>
+	</head>
+	<body class="easyui-layout">
+		<center>
+			<div class="layui-form">
+				<form id="main_info" name="main_info">
+					<table class="tab_pd">
+						
+						<tr>
+							<td>角色名称：</td>
+							<td><input type="text" name="name" id="name" placeholder="" class="layui-input" autocomplete="off" lay-verify="required"></td>
+						</tr>
+						<tr>
+							<td>描述：</td>
+							<td><textarea name="description" id="description" placeholder="" class="layui-textarea" autocomplete="off" lay-verify="required"></textarea></td>
+						</tr>
+						<tr style="display: none;">
+							<td>Id：</td>
+							<td><input name="id" id="id" placeholder="" class="layui-input" autocomplete="off"></td>
+						
+							<td>&nbsp;&nbsp;&nbsp;&nbsp;创建日期：</td>
+							<td><input name="create_time" id="create_time" placeholder="yyyy-MM-dd" class="layui-input" autocomplete="off"></td>
+						
+						</tr>
+						
+					</table>
+				</form>
+				<div class="footer">
+					<table class="tab_pd">
+						<tr>
+							<td><a class="layui-btn layui-btn-sm" lay-submit="" onclick="Save()"> 保 存 </a></td>
+							<td><a class="layui-btn layui-btn-sm layui-btn-danger" onclick="Return()"> 返 回 </a></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</center>
+	</body>
+</html>

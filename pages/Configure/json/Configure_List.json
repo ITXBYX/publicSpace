@@ -1,0 +1,47 @@
+{
+  "columns":[
+	  {
+	  		"title":"操作",
+	  	  "field":"ck",
+				"checkbox":"true"
+	  },
+    {
+      "field":"i_id",
+      "title":"指令ID",
+      "halign":"center",
+      "width":"15%",
+      "hidden":"true",
+      "align":"center",
+      "editor": "text"
+    },
+    {
+      "field":"i_name",
+      "title":"指令名称",
+      "halign":"center",
+      "width":"17%",
+      "align":"center"
+    },
+    {
+      "field":"i_code",
+      "title":"指令代码",
+      "halign":"center",
+      "width":"11%",
+      "align":"center"
+    },
+    {
+      "field":"i_create_date",
+      "title":"创建日期",
+      "halign":"center",
+      "width":"21%",
+      "align":"center"
+    },
+    {
+      "field":"i_type",
+      "title":"指令类型",
+      "halign":"center",
+      "width":"15%",
+      "align":"center"
+    }
+    
+  ]
+}

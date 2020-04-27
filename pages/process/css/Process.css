@@ -1,0 +1,144 @@
+#Loading {
+	position: absolute;
+	z-index: 1000;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	background: #DDDDDB;
+	text-align: center;
+	padding-top: 20%;
+}
+
+#Loading font {
+	color: #009688;
+}
+
+.tab_pd {
+	border-collapse: separate;
+	border-spacing: 5px 5px;
+}
+
+.dy {
+	position: absolute;
+	z-index: 99;
+	right: 10px;
+	margin-top: -36px;
+}
+
+a {
+	color: #585757;
+	text-decoration: none;
+}
+
+.layui-input,
+.layui-textarea {
+	display: block;
+	width: 300px;
+	padding-left: 10px;
+}
+
+.layui-form {
+	padding-top: 5px;
+}
+
+#CONFIG {
+	width: 100%;
+}
+
+.footer {
+	width: 100%;
+	position: absolute;
+	bottom: 10px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.none {
+	display: none;
+}
+
+.pad {
+	padding: 10px;
+}
+
+#order_search {
+	height: 32px;
+	width: 180px;
+}
+
+.datagrid-cell,
+.datagrid-cell-group,
+.datagrid-header-rownumber,
+.datagrid-cell-rownumber {
+	text-overflow: ellipsis;
+}
+
+.if .layui-input {
+	width: 70px;
+	height: 25px;
+}
+
+.if {
+	float: left;
+}
+
+.two .layui-input {
+	width: 148px;
+	margin-right: 2px;
+}
+
+.three .layui-input {
+	width: 98px;
+	margin-right: 2px;
+}
+
+.icon {
+	margin: 5px;
+}
+
+.left {
+	width: 35px;
+	height: 25px;
+	display: none;
+}
+
+.left2 {
+	width: 35px;
+	height: 25px;
+}
+
+.iconfont{
+	font-size: 14px;
+}
+
+.iconfont:hover{
+	cursor:pointer;
+}
+.layui-icon:hover{
+	cursor:pointer;
+}
+
+.icon_f{
+	font-size: 15px;
+	font-weight: bold;
+}
+
+.max_height {
+	margin-left: 25px;
+	height: 450px;
+	overflow-y: auto;
+}
+
+.top{
+	vertical-align:top;
+}
+
+.wid .layui-input{
+	width: 200px;
+}
+
+#add_bz{
+	margin-left: 30px;
+	margin-top: -16px;
+}

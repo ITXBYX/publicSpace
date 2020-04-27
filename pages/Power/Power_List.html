@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>系统用户</title>
+		<link href="../../favicon.ico" rel="shortcut icon">
+		<link rel="stylesheet" type="text/css" href="../../lib/easyui/easyui.css">
+		<link rel="stylesheet" type="text/css" href="../../lib/easyui/icon.css">
+		<link rel="stylesheet" type="text/css" href="../../lib/layui/css/layui.css">
+		<link rel="stylesheet" type="text/css" href="../../css/font.css">
+		<link rel="stylesheet" type="text/css" href="css/Power.css">
+		<script type="text/javascript" src="../../lib/layui/layui.js"></script>
+		<script type="text/javascript" src="../../lib/easyui/jquery.min.js"></script>
+		<script type="text/javascript" src="../../lib/easyui/jquery.easyui.min.js"></script>
+		<script type="text/javascript" src="js/Power_List.js"></script>
+	</head>
+	<body class="easyui-layout">
+		<div id='Loading'>
+			<h1>
+				<image src='../../images/loading.gif' />
+				<font>Loading···</font>
+			</h1>
+		</div>
+
+		<table id="dg" class="easyui-treegrid" style="width:100%;height:100%" data-options="url:'test.json',rownumbers:true,singleSelect:true,toolbar: '#tb',striped:true,idField:'id',treeField:'name',checkbox:true">
+			<thead>
+				<tr><th width="10%" data-options="field:'id',align:'left',hidden:true">ID</th>
+					<th width="30%" data-options="field:'name',align:'left'">名字</th>
+					<th width="30%" data-options="field:'size',align:'left'">码数</th>
+					<th width="30%" data-options="field:'date',align:'left'">日期</th>
+				</tr>
+			</thead>
+		</table>
+		<div id="tb">
+			<table class="tab_pd">
+				<tr>
+					<td><input id="order_search" class="layui-input" placeholder="用户名称" autocomplete="off" /></td>
+					<td><a class="layui-btn layui-btn-sm" onclick=""><i class="layui-icon">&#xe615;</i></a></td>
+					<td><a class="layui-btn layui-btn-sm layui-btn-normal" onclick=""> 刷 新 </a></td>
+					<td><a class="layui-btn layui-btn-sm" onclick="add_Config()">分配角色</a></td>
+				</tr>
+			</table>
+			<div class="layui-btn-group dy">
+				<button type="button" class="layui-btn layui-btn-primary layui-btn-sm"><i class="layui-icon">&#xe60b;</i></button>
+			</div>
+		</div>
+	</body>
+</html>

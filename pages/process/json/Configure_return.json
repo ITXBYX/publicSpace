@@ -1,0 +1,50 @@
+{
+  "columns":[
+	  {
+        "title":"操作",
+	  	  "field":"ck",
+        "checkbox":"true"
+	  },
+    {
+      "field":"ir_id",
+      "title":"返回值id",
+      "halign":"center",
+      "width":"20%",
+      "hidden":"true",
+      "align":"center",
+      "editor": "text"
+    },
+    {
+      "field":"ir_name",
+      "title":"返回值名称",
+      "halign":"center",
+      "width":"20%",
+      "editor": "text",
+      "align":"center"
+    },
+    {
+      "field":"ir_type",
+      "title":"返回值类型",
+      "halign":"center",
+      "width":"20%",
+      "editor": "text",
+      "align":"center"
+    },
+    {
+      "field":"ir_describe",
+      "title":"返回值描述",
+      "halign":"center",
+      "width":"30%",
+      "editor": "text",
+      "align":"center"
+    },
+    {
+      "field":"ir_remark",
+      "title":"备注",
+      "halign":"center",
+      "width":"27%",
+      "editor": "text",
+      "align":"center"
+    }
+  ]
+}
